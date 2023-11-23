@@ -1,7 +1,7 @@
 ---
 title: "Interview Mode Homogeneity"
 author: "Jeremy Senn"
-format: pdf
+format: gfm
 editor: visual
 ---
 
