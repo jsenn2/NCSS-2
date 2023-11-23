@@ -6,37 +6,23 @@ editor: visual
 ---
 
 ## Purpose
-Examine whether the NCSS 2 dataset exhibits statistical heterogeneity based on the interview mode (ITWMETHOD variable).
+
+Examine whether the NCSS 2 dataset exhibits statistical heterogeneity based on the interview mode (`ITWMETHOD` variable).
 
 ## Procedure
-The dataset was filtered to include only observations from the second wave, which is the sole wave incorporating both CAWI and CATI interview methods. Each numeric and categorical variable was subjected to regression analysis, using ITWMETHOD as the independent variable. Detailed specifications and outcomes of these regression models are stored in the mode_homogeneity.RDS file within this repository.
+
+The dataset was filtered to include only observations from the second wave, which is the sole wave incorporating both CAWI and CATI interview methods. Each numeric and binary variable was subjected to regression analysis, using `ITWMETHOD` as the independent variable. Detailed specifications and outcomes of these regression models are stored in the `mode_homogeneity.RDS` file within this repository.
 
 ## Results
-A total of 154 variables were analyzed. In this analysis, ITWMETHOD emerged as a statistically significant predictor for 19 variables. Ordered by ascending p-values associated with the ITWMETHOD predictor, these variables are:
 
-OTHLANG
-REFWOR
-SERMTIME
-CATHWOR
-EVANWOR
-BOARDNUM
-MBRCOHBT
-UPFUSION
-GRNGRP
-MBRALCMD
-GRNRG
-GRNAWR
-CLS13_14W2
-STRGPLAN
-MUSLMWOR
-BOARDGEN
-PIANO
-NEWMEMS
-GRNWSHP
+A total of 154 variables were analyzed. In this analysis, `ITWMETHOD` emerged as a statistically significant predictor for 19 variables. Ordered by ascending p-values associated with the `ITWMETHOD` predictor, these variables are:
+
+`OTHLANG` `REFWOR` `SERMTIME` `CATHWOR` `EVANWOR` `BOARDNUM` `MBRCOHBT` `UPFUSION` `GRNGRP` `MBRALCMD` `GRNRG` `GRNAWR` `CLS13_14W2` `STRGPLAN` `MUSLMWOR` `BOARDGEN` `PIANO` `NEWMEMS` `GRNWSHP`
 
 Comprehensive outputs of the regression models (also sorted by the `ITWMETHOD`'s p-value) are presented towards the end of this report.
 
 ## Conclusion
+
 Given the significant influence of the measurement mode on the aforementioned variables, it is advisable to account for the mode effect in subsequent data analyses.
 
 ## Models output
@@ -66,5 +52,3 @@ set_working_dir_to_script_location <- function() {
 library(tidyverse)
 read_rds("mode_homogeneity.RDS")
 ```
-
-
