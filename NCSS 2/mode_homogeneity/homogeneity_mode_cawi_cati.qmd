@@ -1,0 +1,33 @@
+---
+title: "mode_homogeneity"
+author: "Jeremy Senn"
+format: html
+editor: visual
+---
+```{r}
+#| echo: false
+library(tidyverse)
+# set script path as wd
+set_working_dir_to_script_location <- function() {
+  if (!requireNamespace("rstudioapi", quietly = TRUE)) {
+    stop("The rstudioapi package is needed for this function to work and it is not installed.")
+  }
+  current_script_path <- rstudioapi::getSourceEditorContext()$path
+  if (current_script_path == "") {
+    stop("No script is currently open in RStudio.")
+  }
+  script_directory <- dirname(current_script_path)
+  setwd(script_directory)
+  return(getwd())
+}
+
+```
+
+```{r}
+#| echo: false
+library(tidyverse)
+read_rds("mode_homogeneity.RDS")
+
+```
+
+
